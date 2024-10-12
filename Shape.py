@@ -11,7 +11,7 @@ class Shape:
     
     def get_area(self):
         return self.area
-    
+
     def get_perimeter(self):
         return self.perimeter
 
@@ -19,16 +19,15 @@ class Shape:
 class Circle(Shape):
     
     
+    def get_area(self):
+        return math.pi * self.radius ** 2
+    
+    def get_perimeter(self):
+        return 2 * math.pi * self.radius
+    
     def __init__(self, radius):
         self.radius = radius
-        
-        """Площадь круга =  pi * r^2"""
-        area = math.pi * self.radius ** 2
-        
-        """Длина(периметр) окружности = 2 * π * r"""
-        perimeter = 2 * math.pi * self.radius
-
-        super().__init__(area, perimeter)
+    
 
 # Класс "Квадрат"
 class Square(Shape):
@@ -37,13 +36,12 @@ class Square(Shape):
     def __init__(self, side_length):
         self.side_length = side_length
         
-        """Площадь квадрата = a^2"""
-        area = self.side_length ** 2
+    def get_area(self):
+        return self.side_length ** 2
         
-        """Периметр квадрата = 4 * a"""
-        perimeter = 4 * self.side_length 
-
-        super().__init__(area, perimeter)
+    def get_perimeter(self):
+        return 4 * self.side_length 
+    
         
 # Класс "Прямоугольник"
 class Rectangle(Shape):
@@ -53,14 +51,11 @@ class Rectangle(Shape):
         self.width = width
         self.height = height
 
-        """Площадь прямоугольника = w * h"""
-        area = self.width * self.height
+    def get_area(self):
+        return self.width * self.height
 
-        """Периметр прямоугольника =  2 * (w + h)"""
-        perimeter = 2 * (self.width + self.height)
-
-        super().__init__(area, perimeter)
-
+    def get_perimeter(self):
+        return 2 * (self.width + self.height)
 
 
 print(f"Площадь круга: {Circle(5).get_area()}")           

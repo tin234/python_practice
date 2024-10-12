@@ -11,11 +11,12 @@ class RainbowColor:
         "BLUE": "Синий",
         "PURPLE": "Фиолетовый"
     }
+    RED = "Красный"
 
-    @classmethod
-    def list_colors(cls):
-        return list(cls.COLORS.values())
+    def list_colors(self):
+        return list(self.COLORS.values())
 
 print(RainbowColor.COLORS["RED"])
-print(RainbowColor.list_colors())
+print(RainbowColor().list_colors())
+print(RainbowColor.RED)
 
