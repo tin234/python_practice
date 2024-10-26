@@ -39,3 +39,5 @@ print(collection)
 # Добавляем элементы с clear=True, что очищает коллекцию после добавления
 add(6, 7, clear=True)
 print(collection)
+
+
